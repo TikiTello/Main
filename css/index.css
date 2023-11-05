@@ -309,7 +309,7 @@ section{
 
 .footer{
     width: 100%;
-    background: linear-gradient(0deg, #1a1e21, #81909c80, #ffffff00);
+    background: linear-gradient(360deg, #0000005b, rgba(255, 255, 255, 0));
     left: 0;
     right: 0;
     bottom: 0;
