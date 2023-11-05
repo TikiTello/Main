@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="Spanish">
+    <meta name="description" content="Pagina web oficial del estudio indie de desarrollo de videojuegos 'TikiTello', por TikiTello">
+    <meta name="keywords" content="TikiTello, grupo de desarrollo de videojuegos">
+    <meta name="author" content="TikiTello">
+    <meta name="refresh" content="2">
+    <meta name="robots" content="index">
+    <meta property="og:title" content="TikiTello | Home" />
+    <meta property="og:image" content="https://scontent.fmex16-2.fna.fbcdn.net/v/t39.30808-6/384204867_340461501881957_3632722970034998217_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=qBLtwZE4rd4AX_JK-Gw&_nc_ht=scontent.fmex16-2.fna&oh=00_AfAUSN9xGR0-29Css718AmS00-UwLinfL277j7xy0fK2Vg&oe=654DBBC3" />
+    <meta property="og:description" content="Pagina web oficial del estudio indie de desarrollo de videojuegos 'TikiTello', por TikiTello" />
+    <title>TikiTello | Home</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+    <!--  - -  normalize.css  - -  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--  - -  Link to css  - -  -->
+    <link rel="stylesheet" href="css/index.css">
+    <!--  - -  SweetAlerts  - -  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+
+    <!--  - -  ==========================  Pagina  ==========================  - -  -->
+
+    <!--  - -  Home  - -  -->
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">
+                <img src="images/logo.png" alt="" class="title-logo">
+                <span class="home-subtitle">
+                    <p class="subtitlefix" id="splasheszone"></p>
+                </span>
+            </h2>
+            <script>
+                window.addEventListener("load", function(event) {
+                    console.log("Todos los recursos terminaron de cargar!");
+                    var splashes = ["El blog menos relevante en internet", "Hecho por NeoGHCO", "Sir_Million te vigila", "¿Alguien realmente lee estos subtitulos?", "Creditos a Sir_Million", "MillionDesire ya no existe, pero su escencia persiste en estas paginas", "Sé feliz hoy! Aunque únicamente sea por joder a los envidiosos", "El tiempo sin ti es empo", "¡Corre a por tus sueños! Si no los alcanzas, por lo menos haces deporte", "Todo es divertido, siempre y cuando le ocurra a otra persona", "Hoy amanecí como un campo sin vacas: desganado. ¡Buenos días!", "Previsión del tiempo para esta noche: estará oscuro", "Tengo que ir al oculista, pero nunca veo el momento", "Lo más cerca que una persona llega a la perfección es el día que rellena una solicitud de empleo", "Siembra un árbol y harás feliz a un perro", "Gracias a Dios que soy ateo", "Si el mundo es un pañuelo, ¿nosotros qué somos?", "Hay dos palabras que te abrirán muchas puertas: Tire y Empuje", "Solía pensar que soy indeciso, pero ahora no estoy seguro", "Si buscas una mano que te ayude... ¡Búscala al final de tu brazo!", "El silencio es oro. A menos que tengas hijos, ahí se convierte en sospecha", "Una conciencia limpia es por lo general, una señal de mala memoria", "Si al principio no tienes éxisto, entonces el paracaidismo definitivamente no es para ti", "No te tomes la vida en serio. Nunca saldrás vivo de ella", "Yo tenía un lado dulce... hasta que me lo comí", "Más vale tarde, porque por la mañana duermo", "Al que madruga, nadie le hace el desayuno", "Ríe y el mundo reirá contigo, ronca y dormirás solo", "Lo importante no es ganar, es hacer perder al otro", "No soy vago, estoy en modo ahorro de energía", "Odio ser bipolar, es una sensación fantástica", "Las cuatro palabras más bonitas de nuestro idioma: ya te lo dije"]
+                    document.querySelector('#splasheszone').innerHTML = splashes[Math.floor(Math.random() * splashes.length)]
+                });
+            </script>
+        </div>
+    </section>
+
+    <div class="entire-page">
+
+        <!--  - -  Post Filter  - -  -->
+
+        <div class="post-filter container">
+            <span class="filter-item active-filter" data-filter='all'>All</span>
+            <span class="filter-item" data-filter='html'>HTML</span>
+            <span class="filter-item" data-filter='css'>CSS</span>
+            <span class="filter-item" data-filter='responsive'>Responsive</span>
+        </div>
+
+        <!--  - -  Posts  - -  -->
+
+        <section class="post container">
+
+            <!--  - -  Post Box 1  - -  -->
+            <div class="post-box html">
+                <img src="images/html.png" alt="" class="post-img">
+                <h2 class="category">HTML</h2>
+                <a href="/Blog/articles/html/que-es-html-y-para-que-sirve.html" class="post-title">
+                    Que es HTML y para que sirve
+                </a>
+                <span class="post-date">26 Sep 2022</span>
+                <p class="post-decription">En este articulo se expresa brevemente que es y para que se usa el Lenguaje de Marcas de Hipertexto (HTML, HyperText Markup Language).</p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/profile-million.png" alt="" class="profile-img">
+                    <span class="profile-name">Sir_Million</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 2  - -  -->
+            <div class="post-box css">
+                <img src="images/css.png" alt="" class="post-img">
+                <h2 class="category">CSS</h2>
+                <a href="/Blog/articles/css/que-es-css-y-para-que-sirve.html" class="post-title">
+                    Que es CSS y para que sirve
+                </a>
+                <span class="post-date">26 Sep 2022</span>
+                <p class="post-decription">En este articulo se expresa brevemente que son y para que se usan las hojas de estilo en cascada (CSS, cascading style sheets).</p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/profile-million.png" alt="" class="profile-img">
+                    <span class="profile-name">Sir_Million</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 3  - -  -->
+            <div class="post-box responsive">
+                <img src="images/rwd.png" alt="" class="post-img">
+                <h2 class="category">Responsive Web Design</h2>
+                <a href="/Blog/articles/responsive/que-es-rwd-y-porque-usarlo.html" class="post-title">
+                    Que es el Responsive Web Design y porque debes usarlo
+                </a>
+                <span class="post-date">6 Sep 2022</span>
+                <p class="post-decription">En este articulo se expresa brevemente que es y porque debes aplicar en tus paginas el Responsive Web Design</p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/profile-million.png" alt="" class="profile-img">
+                    <span class="profile-name">Sir_Million</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 4  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 5  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 6  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 7  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 8  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+            <!--  - -  Post Box 9  - -  -->
+            <div class="post-box">
+                <img src="images/info.png" alt="" class="post-img">
+                <h2 class="category">Coming Soon</h2>
+                <a href="#" class="post-title">
+                    Coming Soon
+                </a>
+                <span class="post-date"></span>
+                <p class="post-decription"></p>
+                <!--  - -  Profile  - -  -->
+                <div class="profile">
+                    <img src="images/info.png" alt="" class="profile-img">
+                    <span class="profile-name">. . .</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!--  - -  Footer  - -  -->
+
+        <div class="footer">
+            <p>Pagina diseñada por <br> <br> <span class="fullname">Neo<span class="Name">GHCO</span></span></p>
+            <div class="social">
+                <a href="https://www.facebook.com/GHCO-107728201998587/"><ion-icon name="logo-facebook"></ion-icon></box-icon></a>
+            </div>
+        </div>
+    
+    </div>
+
+    <!--  - -  JQuery  - -  -->
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!--  - -  Link to JS  - -  -->
+    <script src="js/index.js"></script>
+
+    <!--  - -  External Resources  - -  -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
