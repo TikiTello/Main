@@ -206,10 +206,10 @@
             fetch(carpeta)
                 .then(response => response.text())
                 .then(data => {
-                    console.log('Ruta completa de la carpeta "articles/":', data);
                     var parser = new DOMParser();
                     var htmlDoc = parser.parseFromString(data, "text/html");
                     var links = Array.from(htmlDoc.querySelectorAll('a'));
+                    console.log('Ruta completa de la carpeta "articles/":', window.location.origin + '/' + carpeta );
                     var archivos = links
                         .map(a => a.href) // Obtener rutas completas
                         .filter(file => file.startsWith(window.location.origin + '/' + carpeta)); // Filtrar rutas de la carpeta "articles/"
