@@ -205,6 +205,7 @@
             fetch(carpeta)
                 .then(response => response.text())
                 .then(data => {
+                    console.log('Ruta completa de la carpeta "articles/":', window.location.origin + '/' + carpeta);
                     var parser = new DOMParser();
                     var htmlDoc = parser.parseFromString(data, "text/html");
                     var links = Array.from(htmlDoc.querySelectorAll('a'));
