@@ -222,7 +222,7 @@
                             .then(data => {
                                 if (validarEstructura(data)) {
                                     console.log('Archivo válido:', archivo);
-                                    archivosValidos.push({ nombre: archivo.split('/').pop(), contenido: JSON.parse(data) });
+                                    //archivosValidos.push({ nombre: archivo.split('/').pop(), contenido: JSON.parse(data) });
 
                                     // Verificar si se ha llegado al último archivo
                                     if (index === archivos.length - 1) {
@@ -254,6 +254,30 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDkH6TGypYVqVDHoLTuYxnw-z08QS3sjeg",
+          authDomain: "tikitello-1f306.firebaseapp.com",
+          projectId: "tikitello-1f306",
+          storageBucket: "tikitello-1f306.appspot.com",
+          messagingSenderId: "943329071265",
+          appId: "1:943329071265:web:e19157870409bb6d09e0e0",
+          measurementId: "G-FD7LCMKZ54"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 
 </body>
 </html>
