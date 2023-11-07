@@ -1,6 +1,6 @@
 // Ruta de la carpeta a verificar (puedes modificarla según tus necesidades)
-var carpeta = 'Main/articles';
-//var carpeta = 'articles/';
+//var carpeta = 'Main/articles';
+var carpeta = 'articles/';
 
 // Array para almacenar archivos válidos
 var archivosValidos = [];
