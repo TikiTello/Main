@@ -1,142 +1,17 @@
-/*
-// Ruta de la carpeta a verificar (puedes modificarla según tus necesidades)
-//var carpeta = 'Main/articles';
-var carpeta = 'articles/';
+// Asegúrate de tener elementos con las clases "blog-page" y "article-page" en tu HTML.
+var blogPage = document.querySelector('.blog-page');
+var articlePage = document.querySelector('.article-page');
+var backhome = document.querySelector('.back-home');
 
-// Array para almacenar archivos válidos
-var archivosValidos = [];
-
-// Función para validar la estructura de un archivo JSON
-function validarEstructura(archivo) {
-    try {
-        var contenido = JSON.parse(archivo);
-        return (
-            contenido.tipo !== undefined &&
-            contenido.titulo !== undefined &&
-            contenido.fecha !== undefined &&
-            contenido.descripcion !== undefined &&
-            contenido.autor !== undefined &&
-            contenido.articulo !== undefined &&
-            contenido.articulo.cabezera !== undefined &&
-            contenido.articulo.texto !== undefined
-        );
-    } catch (error) {
-        return false;
-    }
-}
-
-// Función para crear y agregar elementos HTML para cada archivo válido
-function crearElementosHTML() {
-    var articlesZone = document.getElementById('articleszone');
-
-    archivosValidos.forEach(function(archivo) {
-        var postBox = document.createElement('div');
-        postBox.className = 'post-box';
-
-        var category = document.createElement('h2');
-        category.className = 'category';
-        category.textContent = archivo.contenido.tipo;
-
-        var postTitle = document.createElement('a');
-        postTitle.className = 'post-title';
-        postTitle.textContent = archivo.contenido.titulo;
-        postTitle.href = '#'; // Asigna la URL apropiada
-
-        var postDate = document.createElement('span');
-        postDate.className = 'post-date';
-        postDate.textContent = archivo.contenido.fecha;
-
-        var postDescription = document.createElement('p');
-        postDescription.className = 'post-decription';
-        postDescription.textContent = archivo.contenido.descripcion;
-
-        var profile = document.createElement('div');
-        profile.className = 'profile';
-
-        var profileName = document.createElement('span');
-        profileName.className = 'profile-name';
-        profileName.textContent = archivo.contenido.autor;
-
-        // Verifica si el autor es "TikiTello" y ajusta la imagen de perfil
-        if (archivo.contenido.autor === 'TikiTello') {
-            var profileImage = document.createElement('img');
-            profileImage.className = 'profile-img';
-            profileImage.src = 'images/logo.png'; // Asigna la URL de la imagen de perfil personalizada
-            profile.appendChild(profileImage);
-        }
-
-        // Verifica si la categoría es "Indie Studio" y agrega la clase "indiestudio" y una imagen personalizada
-        if (archivo.contenido.tipo === 'Indie Studio') {
-            postBox.classList.add('indiestudio');
-            var postImage = document.createElement('img');
-            postImage.className = 'post-img';
-            postImage.src = 'images/logo.png'; // Asigna la URL de la imagen personalizada
-            postBox.appendChild(postImage);
-        }
-
-        postBox.appendChild(category);
-        postBox.appendChild(postTitle);
-        postBox.appendChild(postDate);
-        postBox.appendChild(postDescription);
-
-        profile.appendChild(profileName);
-        postBox.appendChild(profile);
-
-        articlesZone.appendChild(postBox);
-    });
-}
-
-// Función para listar los archivos en la carpeta, validarlos y guardar los válidos en el array
-function listFiles() {
-    fetch(carpeta)
-        .then(response => response.text())
-        .then(data => {
-            var parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(data, "text/html");
-            var links = Array.from(htmlDoc.querySelectorAll('a'));
-            console.log('Ruta completa de la carpeta "articles/":', window.location.origin + '/' + carpeta );
-            var archivos = links
-                .map(a => a.href) // Obtener rutas completas
-                .filter(file => file.startsWith(window.location.origin + '/' + carpeta)); // Filtrar rutas de la carpeta "articles/"
-
-            console.log('Archivos en la carpeta "articles/":');
-
-            archivos.forEach(function(archivo, index) {
-                fetch(archivo)
-                    .then(response => response.text())
-                    .then(data => {
-                        if (validarEstructura(data)) {
-                            console.log('Archivo válido:', archivo);
-                            archivosValidos.push({ nombre: archivo.split('/').pop(), contenido: JSON.parse(data) });
-
-                            // Verificar si se ha llegado al último archivo
-                            if (index === archivos.length - 1) {
-                                // Llama a la función para crear y agregar elementos HTML cuando se haya procesado el último archivo
-                                crearElementosHTML();
-                            }
-                        } else {
-                            console.log('Archivo no válido (estructura incorrecta):', archivo);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error al leer el archivo:', archivo, error);
-                    });
-            });
-        })
-        .catch(error => {
-            console.error('Error al leer la carpeta:', error);
-        });
-}
-
-listFiles(); // Llama a la función para listar y validar los archivos cuando se cargue la página.
-*/
+backhome.addEventListener('click', function() {
+    articlePage.style.transform = 'scale(0)';
+});
 
 // Ruta de la carpeta "articles/"
 var carpeta = 'articles/';
 
 // Array con los nombres de los archivos JSON
-var nombresArchivos = 
-[
+var nombresArchivos = [
     '11111.json',
     '22222.json',
     '33333.json',
@@ -148,6 +23,38 @@ var nombresArchivos =
 
 // Elemento HTML donde deseas listar los archivos
 var articlesZone = document.getElementById('articleszone');
+
+// Elemento HTML donde deseas mostrar la información del archivo JSON
+var infozone = document.getElementById('infozone');
+
+window.onload = function() {
+    // Este código se ejecutará cuando la página se cargue por completo.
+
+    // Aquí puedes agregar tus instrucciones manualmente.
+    // Por ejemplo, puedes minimizar "article-page" al cargar la página.
+    articlePage.style.transform = 'scale(0)';
+    articlePage.style.display = 'none';
+
+    // También puedes realizar otras acciones según tus necesidades.
+};
+
+// Configura un manejador de eventos para el evento 'transitionend' en "blog-page"
+blogPage.addEventListener('transitionend', function(event) {
+    if (event.propertyName === 'transform' && getComputedStyle(this).transform === 'matrix(0, 0, 0, 0, 0, 0)') {
+        // La escala ha terminado de pasar a 0
+        this.style.display = 'none'; // Oculta "blog-page" después de la transición
+        articlePage.style.transform = 'scale(1)';
+    }
+});
+
+articlePage.addEventListener('transitionend', function(event) {
+    if (event.propertyName === 'transform' && getComputedStyle(this).transform === 'matrix(0, 0, 0, 0, 0, 0)') {
+        // La escala ha terminado de pasar a 0
+        this.style.display = 'none';
+        blogPage.style.removeProperty('display');
+        blogPage.style.transform = 'scale(1)';
+    }
+});
 
 nombresArchivos.forEach(function(nombreArchivo) {
     // Crea un elemento <div> para el post-box
@@ -170,6 +77,41 @@ nombresArchivos.forEach(function(nombreArchivo) {
             postTitle.className = 'post-title';
             postTitle.textContent = contenido.titulo;
             postTitle.href = '#' + nombreArchivo.split('.json')[0]; // Asigna el enlace con el nombre del archivo (sin .json)
+
+            // Configura un manejador de eventos para minimizar y maximizar cuando se hace clic en el enlace
+            postTitle.addEventListener('click', function() {
+                blogPage.style.transform = 'scale(0)';
+                articlePage.style.removeProperty('display');
+
+                // Accede a la información del archivo JSON y escribirla en "infozone"
+                infozone.innerHTML = ''; // Limpiar contenido anterior
+
+                // Accede a la información del archivo JSON
+                var articulo = contenido.articulo;
+
+                // Iterar a través de los elementos dentro de la sección "articulo" y mostrar los textos
+                for (var clave in articulo) {
+                    if (articulo.hasOwnProperty(clave)) {
+                        if (clave.startsWith('cabezera')) {
+                            // Crear un elemento <h2> para la cabecera
+                            var cabeceraElemento = document.createElement('h2');
+                            cabeceraElemento.className = 'sub-heading';
+                            cabeceraElemento.textContent = articulo[clave];
+
+                            // Agregar el elemento al "infozone"
+                            infozone.appendChild(cabeceraElemento);
+                        } else {
+                            // Crear un elemento <p> para el texto
+                            var textoElemento = document.createElement('p');
+                            textoElemento.className = 'post-text';
+                            textoElemento.textContent = articulo[clave];
+
+                            // Agregar el elemento al "infozone"
+                            infozone.appendChild(textoElemento);
+                        }
+                    }
+                }
+            });
 
             var postDate = document.createElement('span');
             postDate.className = 'post-date';
