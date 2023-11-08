@@ -143,8 +143,7 @@ var nombresArchivos =
     '44444.json',
     '55555.json',
     '66666.json',
-    '77777.json',
-    'otherdummy.json'
+    '77777.json'
 ];
 
 // Elemento HTML donde deseas listar los archivos
