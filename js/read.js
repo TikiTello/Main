@@ -1,3 +1,4 @@
+/*
 // Ruta de la carpeta a verificar (puedes modificarla según tus necesidades)
 //var carpeta = 'Main/articles';
 var carpeta = 'articles/';
@@ -128,3 +129,92 @@ function listFiles() {
 }
 
 listFiles(); // Llama a la función para listar y validar los archivos cuando se cargue la página.
+*/
+
+// Ruta de la carpeta "articles/"
+var carpeta = 'articles/';
+
+// Array con los nombres de los archivos JSON
+var nombresArchivos = 
+[
+    '11111.json',
+    '22222.json',
+    '33333.json',
+    '44444.json',
+    '55555.json',
+    '66666.json',
+    '77777.json',
+    'otherdummy.json'
+];
+
+// Elemento HTML donde deseas listar los archivos
+var articlesZone = document.getElementById('articleszone');
+
+nombresArchivos.forEach(function(nombreArchivo) {
+    // Crea un elemento <div> para el post-box
+    var postBox = document.createElement('div');
+    postBox.className = 'post-box';
+
+    // Carga el contenido del archivo JSON
+    fetch(carpeta + nombreArchivo)
+        .then(response => response.text())
+        .then(data => {
+            var contenido = JSON.parse(data);
+
+            // Crea elementos para mostrar el contenido del archivo
+            var category = document.createElement('h2');
+            category.className = 'category';
+            category.textContent = contenido.tipo;
+
+            var postTitle = document.createElement('a');
+            postTitle.className = 'post-title';
+            postTitle.textContent = contenido.titulo;
+            postTitle.href = '#'; // Asigna la URL apropiada
+
+            var postDate = document.createElement('span');
+            postDate.className = 'post-date';
+            postDate.textContent = contenido.fecha;
+
+            var postDescription = document.createElement('p');
+            postDescription.className = 'post-decription';
+            postDescription.textContent = contenido.descripcion;
+
+            var profile = document.createElement('div');
+            profile.className = 'profile';
+
+            var profileName = document.createElement('span');
+            profileName.className = 'profile-name';
+            profileName.textContent = contenido.autor;
+
+            // Verifica si el autor es "TikiTello" y ajusta la imagen de perfil
+            if (contenido.autor === 'TikiTello') {
+                var profileImage = document.createElement('img');
+                profileImage.className = 'profile-img';
+                profileImage.src = 'images/logo.png'; // Asigna la URL de la imagen de perfil personalizada
+                profile.appendChild(profileImage);
+            }
+
+            // Verifica si la categoría es "Indie Studio" y agrega la clase "indiestudio" y una imagen personalizada
+            if (contenido.tipo === 'Indie Studio') {
+                postBox.classList.add('indiestudio');
+                var postImage = document.createElement('img');
+                postImage.className = 'post-img';
+                postImage.src = 'images/logo.png'; // Asigna la URL de la imagen personalizada
+                postBox.appendChild(postImage);
+            }
+
+            postBox.appendChild(category);
+            postBox.appendChild(postTitle);
+            postBox.appendChild(postDate);
+            postBox.appendChild(postDescription);
+
+            profile.appendChild(profileName);
+            postBox.appendChild(profile);
+
+            // Agrega el post-box al elemento HTML donde deseas listar los archivos
+            articlesZone.appendChild(postBox);
+        })
+        .catch(error => {
+            console.error('Error al cargar el archivo:', error);
+        });
+});
