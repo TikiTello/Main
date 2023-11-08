@@ -165,10 +165,11 @@ nombresArchivos.forEach(function(nombreArchivo) {
             category.className = 'category';
             category.textContent = contenido.tipo;
 
+            // Crea un enlace "<a>" con el nombre del archivo (sin la extensión .json)
             var postTitle = document.createElement('a');
             postTitle.className = 'post-title';
             postTitle.textContent = contenido.titulo;
-            postTitle.href = '#'; // Asigna la URL apropiada
+            postTitle.href = '#' + nombreArchivo.split('.json')[0]; // Asigna el enlace con el nombre del archivo (sin .json)
 
             var postDate = document.createElement('span');
             postDate.className = 'post-date';
