@@ -265,6 +265,15 @@
     border-radius: 0.5rem;
 }
 
+.article-img{
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    box-shadow: #0000008e 10px 10px 25px;
+}
+
 .category{
     font-size: 0.9rem;
     font-weight: 500;
@@ -291,7 +300,7 @@
     margin-top: 4px;
 }
 
-.post-decription{
+.post-description{
     font-size: 0.9rem;
     line-height: 1.5rem;
     margin: 5px 0 10px;

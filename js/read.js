@@ -27,6 +27,12 @@ var articlesZone = document.getElementById('articleszone');
 // Elemento HTML donde deseas mostrar la información del archivo JSON
 var infozone = document.getElementById('infozone');
 
+// Listar los nombres de archivos JSON en la consola
+console.log('Archivos JSON disponibles:');
+nombresArchivos.forEach(function(nombreArchivo) {
+    console.log(nombreArchivo);
+});
+
 window.onload = function() {
     // Este código se ejecutará cuando la página se cargue por completo.
 
@@ -100,7 +106,7 @@ nombresArchivos.forEach(function(nombreArchivo) {
 
                             // Agregar el elemento al "infozone"
                             infozone.appendChild(cabeceraElemento);
-                        } else {
+                        } else if (clave.startsWith('texto')) {
                             // Crear un elemento <p> para el texto
                             var textoElemento = document.createElement('p');
                             textoElemento.className = 'post-text';
@@ -108,6 +114,14 @@ nombresArchivos.forEach(function(nombreArchivo) {
 
                             // Agregar el elemento al "infozone"
                             infozone.appendChild(textoElemento);
+                        } else if (clave.startsWith('imagen')) {
+                            // Crear un elemento <img> para la imagen
+                            var imgElemento = document.createElement('img');
+                            imgElemento.className = 'article-img';
+                            imgElemento.src = articulo[clave]; // Asignar la URL de la imagen
+
+                            // Agregar el elemento al "infozone"
+                            infozone.appendChild(imgElemento);
                         }
                     }
                 }
@@ -118,7 +132,7 @@ nombresArchivos.forEach(function(nombreArchivo) {
             postDate.textContent = contenido.fecha;
 
             var postDescription = document.createElement('p');
-            postDescription.className = 'post-decription';
+            postDescription.className = 'post-description';
             postDescription.textContent = contenido.descripcion;
 
             var profile = document.createElement('div');
