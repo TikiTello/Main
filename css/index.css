@@ -171,6 +171,10 @@
     color: var(--second-color);
 }
 
+.spanify{
+    color: var(--second-color);
+}
+
 /* =========== Post Filter =========== */
 
 .entire-page{
@@ -194,11 +198,12 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text-color);
+    font-size: 0.9rem;
 }
 
 .back-home:hover{
     background: #ff66c4;
-    color: var(--container-color);
+    color: var(--bg-color);
     transform: translate(-10px, -10px);
     box-shadow: var(--container-color) 10px 10px 0;
 }
@@ -410,11 +415,6 @@ section{
     margin-top: 4rem !important;
 }
 
-.back-home{
-    color: var(--second-color);
-    font-size: 0.9rem;
-}
-
 .header-title{
     width: 90%;
     font-size: 2.6rem;
@@ -483,6 +483,20 @@ section{
     /*.footer{
         position: relative;
     }*/
+}
+
+.Name{
+    color: var(--second-color);
+}
+
+/* ghco tag */
+
+.fullname{
+    color: var(--bg-color);
+    background: var(--container-color);
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-weight: 600;
 }
 
 .Name{

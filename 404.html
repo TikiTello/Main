@@ -22,38 +22,74 @@ permalink: /404.html
     <!--  - -  ==========================  Pagina  ==========================  - -  -->
 
     <!--  - -  Header  - -  -->
-    
-    <header>
-        
-        <!--  - -  Nav  - -  -->
-        <div class="nav container">
-            <!--  - -  Logo  - -  -->
-            <a href="/Blog" class="logo">Neo<span>GHCO</span></a>\
-            <!--  - -  CanvaLogo  - -  -->
-            <div class="canvalogo">
-                <a href="clicker.html">
-                    <img src="images/logo.png" title="Click Game!">
-                </a>
-            </div>
-        </div>
+      
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">
+                <img src="images/logo.png" alt="" class="title-logo">
+                <span class="home-subtitle">
+                    <p class="subtitlefix" id="splasheszone"></p>
+                </span>
+            </h2>
+            <script>
+                window.addEventListener("load", function(event) {
+                    console.log("Todos los recursos terminaron de cargar!");
+                    
+                    var splashes = [
+                        "Estas perdido?",
+                        "Error 404, contenido no encontrado",
+                        "¡Oh no! Parece que el código se perdió en un portal interdimensional. Error 404: ¡Fuente no encontrada!",
+                        "¡Cuidado con el agua! Algo mojó el servidor y la página que buscas se desvaneció. Error 404.",
+                        "¡Oh no! Parece que has llegado a un callejón sin salida. Error 404: ¡Fuente no encontrada!",
+                        "¡Houston, tenemos un problema! La página que buscas está en una galaxia muy, muy lejana. Error 404.",
+                        "¡Error 404! La página que buscas está perdida en la maraña de la red.",
+                        "¡Algo salió mal! La página que intentas encontrar se ha volatilizado. Error 404.",
+                        "¡Oops! Parece que esa página está de vacaciones. Error 404: ¡No disponible!",
+                        "¡Error 404! Esta página se ha escondido mejor que Waldo.",
+                        "¡Lamentablemente, la página que buscas no está en el menú! Error 404.",
+                        "¡Oh, cielos! Parece que la página que buscas se escapó de nuestro radar. Error 404.",
+                        "¡Error 404! La página que intentas encontrar ha desaparecido en la bruma digital.",
+                        "¡Eso es un negativo! La página que buscas no está respondiendo. Error 404.",
+                        "¡Error 404! La página que intentas encontrar está en un universo paralelo.",
+                        "¡La página que buscas se ha evaporado como lágrimas en la lluvia! Error 404.",
+                        "¡Oh, capitán, mi capitán! La página que buscas se ha perdido en el ciberespacio. Error 404.",
+                        "¡Error 404! Parece que la página que buscas está tomando un descanso.",
+                        "¡No se encontró la página! Debe haberse disfrazado de invisible. Error 404.",
+                        "¡Error 404! La página que buscas está en una expedición sin retorno.",
+                        "¡Estamos buscando debajo del sofá! Pero la página que buscas no está aquí. Error 404.",
+                        "¡Oh, rayos! La página que buscas se desvaneció en el éter digital. Error 404.",
+                        "¡Error 404! La página que intentas encontrar está en el limbo de la red.",
+                        "¡Ups! La página que buscas ha decidido tomarse un día libre. Error 404.",
+                        "¡Error 404! La página que intentas encontrar se volatilizó como un sueño al despertar.",
+                        "¡Lo sentimos, pero esa página está en modo sigiloso! Error 404.",
+                        "¡La página que buscas se fue de paseo intergaláctico! Error 404.",
+                        "¡Error 404! Parece que la página que buscas está jugando a las escondidas.",
+                        "¡Oh, no! La página que buscas ha tomado un atajo por el ciberespacio. Error 404.",
+                        "¡Error 404! La página que intentas encontrar está en una misión clasificada."
+                    ];
 
-    </header>
+                    document.querySelector('#splasheszone').innerHTML = splashes[Math.floor(Math.random() * splashes.length)]
+                });
+
+            </script>
+        </div>
+    </section>
 
     <!--  - -  Post Content  - -  -->
 
-    <section class="post-header">
+    <div class="entire-page">
+
         <div class="header-content post-container">
             <!--  - -  Back To Home  - -  -->
-            <a href="/Blog" class="back-home">Volver a la pagina principal</a>
+            <a href="/Main" class="back-home"><p>Volver a la pagina principal</p></a>
             <!--  - -  Title  - -  -->
-            <h1 class="header-title">Oh, parece que ha habido un problema</h1>
+            <h1 class="header-title"><span class="spanify">Oh, parece que ha habido un problema</span></h1>
 
             <style>
                 .description{
                     width: 80%;
                     font-size: 1.5rem;
                     font-weight: 500;
-                    color: var(--bg-color);
                     text-align: center;
                     margin-bottom: 1rem;
                 }
@@ -71,19 +107,20 @@ permalink: /404.html
             <p class="description">El contenido al cual intentas acceder no existe, intenta con algun articulo de nuestro blog que ya haya sido publicado.</p>
             <p class="error-no">Error 404</p>
         </div>
-    </section>
 
-    <section class="post-content post-container">
-        <p style="display: none; color: black;">este texto no se mostrara ¿no es eso extraño?</p>
-    </section>
+        <section class="post-content post-container">
+            <p style="display: none; color: black;">este texto no se mostrara ¿no es eso extraño?</p>
+        </section>
 
-    <!--  - -  Footer  - -  -->
+        <!--  - -  Footer  - -  -->
 
-    <div class="footer">
-        <p>Pagina diseñada por <br> <br> <span class="fullname">Neo<span class="Name">GHCO</span></span></p>
-        <div class="social">
-            <a href="https://www.facebook.com/GHCO-107728201998587/"><ion-icon name="logo-facebook"></ion-icon></box-icon></a>
+        <div class="footer">
+            <p>Pagina diseñada por <br> <br> <span class="fullname">Tiki<span class="Name">Tello</span></span></p>
+            <div class="social">
+                <a href="https://www.facebook.com/GHCO-107728201998587/"><ion-icon name="logo-facebook"></ion-icon></box-icon></a>
+            </div>
         </div>
+
     </div>
 
     <!--  - -  JQuery  - -  -->
